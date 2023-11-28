@@ -1,5 +1,5 @@
 {% set name = "frugally-deep" %}
-{% set version = "0.15.25" %}
+{% set version = "0.15.26" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Dobiasd/{{ name }}/archive/refs/tags/v{{ version }}-p0.tar.gz
-  sha256: d1204bc13ace603e97696aa7a1331d6af819c3a9b4952b4fd1e3d72dd8f524c3
+  sha256: 11b27a7353b5a8dc0f8bfe0568aa82185f255ddb3426a09dd532a65e3b505875
 
 build:
   number: 0
