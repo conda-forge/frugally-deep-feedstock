@@ -7,6 +7,7 @@ cmake ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DFDEEP_USE_DOUBLE=ON ^
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
