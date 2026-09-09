@@ -31,15 +31,11 @@ requirements:
     - ${{ pin_subpackage(name, upper_bound='x.x.x') }}
 
 tests:
-  - script:
-      - if: not win
-        then: test -f ${PREFIX}/include/fdeep/tensor_shape.hpp
-      - if: not win
-        then: test -f ${PREFIX}/lib/cmake/frugally-deep/frugally-deepConfig.cmake
-      - if: win
-        then: if not exist %PREFIX%\\Library\\include\\fdeep\\tensor_shape.hpp exit 1
-      - if: win
-        then: if not exist %PREFIX%\\Library\\lib\\cmake\\frugally-deep\\frugally-deepConfig.cmake exit 1
+  - package_contents:
+      include:
+        - fdeep/tensor_shape.hpp
+      files:
+        - lib/cmake/frugally-deep/frugally-deepConfig.cmake
 
 about:
   license: MIT
