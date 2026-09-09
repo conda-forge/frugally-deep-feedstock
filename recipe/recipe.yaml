@@ -35,7 +35,7 @@ tests:
       include:
         - fdeep/tensor_shape.hpp
       files:
-        - lib/cmake/frugally-deep/frugally-deepConfig.cmake
+        - ${{ "Library/" if win }}lib/cmake/frugally-deep/frugally-deepConfig.cmake
 
 about:
   license: MIT
