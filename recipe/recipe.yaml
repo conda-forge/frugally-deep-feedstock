@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: frugally-deep
+  version: "0.20.0"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/Dobiasd/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 79a1f400523d629a5f7545f23c152f5b2ba17668a0e07edf8949658ee4066002
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - if: not win
+      then: make
+    - cmake
+  host:
+    - functionalplus
+    - eigen
+    - nlohmann_json
+  run_exports:
+    - ${{ pin_subpackage(name, upper_bound='x.x.x') }}
+
+tests:
+  - package_contents:
+      include:
+        - fdeep/tensor_shape.hpp
+      files:
+        - ${{ "Library/" if win }}lib/cmake/frugally-deep/frugally-deepConfig.cmake
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: Header-only library for using Keras (TensorFlow) models in C++.
+  homepage: https://github.com/Dobiasd/frugally-deep
+
+extra:
+  recipe-maintainers:
+    - GiulioRomualdi
+    - traversaro
