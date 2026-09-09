@@ -2,18 +2,18 @@ schema_version: 1
 
 context:
   name: frugally-deep
-  version: "0.15.28"
+  version: "0.20.0"
 
 package:
   name: ${{ name }}
   version: ${{ version }}
 
 source:
-  url: https://github.com/Dobiasd/${{ name }}/archive/refs/tags/v${{ version }}-p0.tar.gz
-  sha256: cad9d8932e4da90d800ed78f614a8f93e4e106aa27b81c7e3049bb8223db5572
+  url: https://github.com/Dobiasd/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 79a1f400523d629a5f7545f23c152f5b2ba17668a0e07edf8949658ee4066002
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
